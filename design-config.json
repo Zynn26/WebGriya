@@ -1,0 +1,388 @@
+{
+  "application": {
+    "name": "MyGriya",
+    "description": "Residential management and community services application",
+    "language": "id",
+    "version": "1.0.0"
+  },
+  "theme": {
+    "colors": {
+      "primary": {
+        "sidebar": "#A47551",
+        "text": "#3E2C22",
+        "formElements": "#E5D4C1",
+        "background": "#FFFFFF"
+      },
+      "secondary": {
+        "hover": "#8D5F3F",
+        "active": "#7A4F35"
+      },
+      "accent": {
+        "light": "#F5EBE0",
+        "medium": "#D4C4B0"
+      },
+      "status": {
+        "success": "#4CAF50",
+        "error": "#F44336",
+        "warning": "#FF9800",
+        "info": "#2196F3"
+      }
+    },
+    "typography": {
+      "fontFamily": "Nunito Sans",
+      "fontSizes": {
+        "heading1": "2rem",
+        "heading2": "1.5rem",
+        "heading3": "1.25rem",
+        "body": "1rem",
+        "small": "0.875rem"
+      },
+      "fontWeights": {
+        "regular": 400,
+        "medium": 600,
+        "bold": 700
+      }
+    },
+    "spacing": {
+      "xs": "0.25rem",
+      "sm": "0.5rem",
+      "md": "1rem",
+      "lg": "1.5rem",
+      "xl": "2rem",
+      "2xl": "3rem"
+    },
+    "borderRadius": {
+      "small": "0.25rem",
+      "medium": "0.5rem",
+      "large": "1rem",
+      "full": "9999px"
+    }
+  },
+  "layout": {
+    "sidebar": {
+      "width": "240px",
+      "position": "fixed",
+      "backgroundColor": "#A47551",
+      "textColor": "#FFFFFF"
+    },
+    "mainContent": {
+      "marginLeft": "240px",
+      "padding": "2rem",
+      "backgroundColor": "#FFFFFF"
+    }
+  },
+  "navigation": {
+    "items": [
+      {
+        "id": "home",
+        "label": "Beranda",
+        "labelEn": "Home",
+        "route": "/",
+        "icon": "home",
+        "component": "HomePage"
+      },
+      {
+        "id": "login",
+        "label": "Login",
+        "labelEn": "Login",
+        "route": "/login",
+        "icon": "log-in",
+        "component": "LoginPage"
+      },
+      {
+        "id": "registration",
+        "label": "Registrasi Akun",
+        "labelEn": "Account Registration",
+        "route": "/registration",
+        "icon": "user-plus",
+        "component": "RegistrationPage"
+      },
+      {
+        "id": "feedback",
+        "label": "Kritik & Saran",
+        "labelEn": "Feedback",
+        "route": "/feedback",
+        "icon": "message-square",
+        "component": "FeedbackPage"
+      }
+    ]
+  },
+  "pages": {
+    "home": {
+      "id": "home",
+      "title": "Selamat Datang di MyGriya",
+      "titleEn": "Welcome to MyGriya",
+      "description": "Platform manajemen perumahan dan layanan komunitas",
+      "descriptionEn": "Residential management and community services platform",
+      "sections": [
+        {
+          "type": "hero",
+          "content": "welcome_message"
+        }
+      ]
+    },
+    "login": {
+      "id": "login",
+      "title": "Login",
+      "titleEn": "Login",
+      "formFields": [
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "placeholder": "Masukkan email Anda",
+          "placeholderEn": "Enter your email",
+          "required": true,
+          "validation": {
+            "type": "email",
+            "message": "Email tidak valid",
+            "messageEn": "Invalid email"
+          }
+        },
+        {
+          "id": "password",
+          "type": "password",
+          "label": "Password",
+          "placeholder": "Masukkan password Anda",
+          "placeholderEn": "Enter your password",
+          "required": true,
+          "validation": {
+            "minLength": 6,
+            "message": "Password minimal 6 karakter",
+            "messageEn": "Password must be at least 6 characters"
+          }
+        }
+      ],
+      "submitButton": {
+        "label": "Masuk",
+        "labelEn": "Login"
+      }
+    },
+    "registration": {
+      "id": "registration",
+      "title": "Registrasi Akun",
+      "titleEn": "Account Registration",
+      "formFields": [
+        {
+          "id": "fullName",
+          "type": "text",
+          "label": "Nama Lengkap",
+          "labelEn": "Full Name",
+          "placeholder": "Masukkan nama lengkap",
+          "placeholderEn": "Enter your full name",
+          "required": true
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "placeholder": "Masukkan email",
+          "placeholderEn": "Enter your email",
+          "required": true,
+          "validation": {
+            "type": "email",
+            "message": "Email tidak valid",
+            "messageEn": "Invalid email"
+          }
+        },
+        {
+          "id": "phone",
+          "type": "tel",
+          "label": "Nomor Telepon",
+          "labelEn": "Phone Number",
+          "placeholder": "Masukkan nomor telepon",
+          "placeholderEn": "Enter your phone number",
+          "required": true,
+          "validation": {
+            "pattern": "^[0-9]{10,13}$",
+            "message": "Nomor telepon tidak valid",
+            "messageEn": "Invalid phone number"
+          }
+        },
+        {
+          "id": "address",
+          "type": "text",
+          "label": "Alamat",
+          "labelEn": "Address",
+          "placeholder": "Masukkan alamat",
+          "placeholderEn": "Enter your address",
+          "required": true
+        },
+        {
+          "id": "password",
+          "type": "password",
+          "label": "Password",
+          "placeholder": "Masukkan password",
+          "placeholderEn": "Enter password",
+          "required": true,
+          "validation": {
+            "minLength": 6,
+            "message": "Password minimal 6 karakter",
+            "messageEn": "Password must be at least 6 characters"
+          }
+        },
+        {
+          "id": "confirmPassword",
+          "type": "password",
+          "label": "Konfirmasi Password",
+          "labelEn": "Confirm Password",
+          "placeholder": "Masukkan ulang password",
+          "placeholderEn": "Re-enter password",
+          "required": true,
+          "validation": {
+            "matchField": "password",
+            "message": "Password tidak cocok",
+            "messageEn": "Passwords do not match"
+          }
+        }
+      ],
+      "submitButton": {
+        "label": "Daftar",
+        "labelEn": "Register"
+      }
+    },
+    "feedback": {
+      "id": "feedback",
+      "title": "Kritik & Saran",
+      "titleEn": "Feedback",
+      "description": "Kami menghargai masukan Anda untuk meningkatkan layanan kami",
+      "descriptionEn": "We value your feedback to improve our services",
+      "formFields": [
+        {
+          "id": "name",
+          "type": "text",
+          "label": "Nama",
+          "labelEn": "Name",
+          "placeholder": "Masukkan nama Anda",
+          "placeholderEn": "Enter your name",
+          "required": true
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email",
+          "placeholder": "Masukkan email Anda",
+          "placeholderEn": "Enter your email",
+          "required": true,
+          "validation": {
+            "type": "email",
+            "message": "Email tidak valid",
+            "messageEn": "Invalid email"
+          }
+        },
+        {
+          "id": "category",
+          "type": "select",
+          "label": "Kategori",
+          "labelEn": "Category",
+          "placeholder": "Pilih kategori",
+          "placeholderEn": "Select category",
+          "required": true,
+          "options": [
+            {
+              "value": "complaint",
+              "label": "Keluhan",
+              "labelEn": "Complaint"
+            },
+            {
+              "value": "suggestion",
+              "label": "Saran",
+              "labelEn": "Suggestion"
+            },
+            {
+              "value": "praise",
+              "label": "Pujian",
+              "labelEn": "Praise"
+            },
+            {
+              "value": "inquiry",
+              "label": "Pertanyaan",
+              "labelEn": "Inquiry"
+            }
+          ]
+        },
+        {
+          "id": "message",
+          "type": "textarea",
+          "label": "Pesan",
+          "labelEn": "Message",
+          "placeholder": "Tuliskan kritik atau saran Anda",
+          "placeholderEn": "Write your feedback",
+          "required": true,
+          "rows": 6,
+          "validation": {
+            "minLength": 10,
+            "message": "Pesan minimal 10 karakter",
+            "messageEn": "Message must be at least 10 characters"
+          }
+        }
+      ],
+      "submitButton": {
+        "label": "Kirim",
+        "labelEn": "Submit"
+      }
+    }
+  },
+  "components": {
+    "button": {
+      "primary": {
+        "backgroundColor": "#A47551",
+        "color": "#FFFFFF",
+        "hoverBackgroundColor": "#8D5F3F",
+        "padding": "0.75rem 1.5rem",
+        "borderRadius": "0.5rem"
+      },
+      "secondary": {
+        "backgroundColor": "#E5D4C1",
+        "color": "#3E2C22",
+        "hoverBackgroundColor": "#D4C4B0",
+        "padding": "0.75rem 1.5rem",
+        "borderRadius": "0.5rem"
+      }
+    },
+    "input": {
+      "backgroundColor": "#E5D4C1",
+      "borderColor": "#A47551",
+      "focusBorderColor": "#8D5F3F",
+      "textColor": "#3E2C22",
+      "padding": "0.75rem",
+      "borderRadius": "0.5rem",
+      "fontSize": "1rem"
+    },
+    "card": {
+      "backgroundColor": "#FFFFFF",
+      "borderColor": "#E5D4C1",
+      "borderRadius": "1rem",
+      "padding": "1.5rem",
+      "boxShadow": "0 2px 8px rgba(0, 0, 0, 0.1)"
+    }
+  },
+  "features": [
+    {
+      "id": "user-authentication",
+      "name": "User Authentication",
+      "description": "Login and registration system",
+      "enabled": true
+    },
+    {
+      "id": "feedback-system",
+      "name": "Feedback System",
+      "description": "Collect user feedback and suggestions",
+      "enabled": true
+    },
+    {
+      "id": "residential-management",
+      "name": "Residential Management",
+      "description": "Manage residential community services",
+      "enabled": true
+    }
+  ],
+  "metadata": {
+    "createdDate": "2025-10-21",
+    "lastModified": "2025-10-21",
+    "author": "MyGriya Team",
+    "framework": "React",
+    "language": "TypeScript",
+    "styling": "Tailwind CSS"
+  }
+}
